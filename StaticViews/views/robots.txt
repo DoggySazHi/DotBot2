@@ -1,0 +1,9 @@
+﻿User-agent: *
+Disallow: /login
+Disallow: /login/
+Disallow: /register
+Disallow: /register/
+
+# Prevent conspiracies.
+User-agent: moriyashrine
+Disallow: /
