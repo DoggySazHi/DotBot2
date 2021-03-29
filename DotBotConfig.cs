@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -13,15 +12,13 @@ namespace DotBot2
         public string MySqlConnection =>
             $"server={MySqlServer};user=DotBotWeb;database=DotBot;port={MySqlPort};password={MySqlPassword}";
         [JsonIgnore] public JObject RawData { get; }
-        [JsonIgnore] private readonly ILogger<DotBotConfig> _logger;
         
-        public DotBotConfig(ILogger<DotBotConfig> logger, string file = "config.json")
+        public DotBotConfig(string file = "config.json")
         {
             var json = File.ReadAllText(file);
             JsonConvert.PopulateObject(json, this);
             RawData = JObject.Parse(json);
             File.WriteAllText(file, JsonConvert.SerializeObject(this, Formatting.Indented));
-            _logger = logger;
         }
     }
 }

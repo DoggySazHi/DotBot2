@@ -6,10 +6,7 @@
 
     <ItemGroup>
       <Folder Include="Models" />
-      <Folder Include="StaticViews\css" />
-      <Folder Include="StaticViews\js" />
       <Folder Include="StaticViews\views\error" />
-      <Folder Include="StaticViews\views\template" />
     </ItemGroup>
 
     <ItemGroup>

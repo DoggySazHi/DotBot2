@@ -13,6 +13,7 @@ namespace DotBot2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSingleton<DotBotConfig>();
             services.AddScoped<MySqlQuery>();
         }
 
