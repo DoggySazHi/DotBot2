@@ -76,3 +76,28 @@ header {
     font-size: 32px;
     margin-bottom: 10px;
 }
+
+hr {
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 2px;
+    color: white;
+    background-color: white;
+}
+
+code {
+    font-family: "Source Code Pro", monospace;
+    font-size: 16px;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: #2394e0;
+}
+a:hover {
+    color: #84eeb4;
+}

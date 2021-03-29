@@ -1,0 +1,44 @@
+﻿.bigheader {
+    font-size: 24px;
+}
+
+.mukyu {
+    width: 100%;
+    align-content: center;
+    font-family: "Consolas", monospace;
+    color: rgb(235, 231, 226);
+    font-size: 6vmax;
+    text-align: center;
+    align-items: center;
+    white-space: initial;
+    word-wrap: break-word;
+}
+
+.stacked {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.patchy {
+    width: 100%;
+    align-content: center;
+    font-family: "Consolas", monospace;
+    color: rgb(235, 231, 226);
+    font-size: 4vmax;
+    text-align: center;
+    align-items: center;
+    white-space: initial;
+    word-wrap: break-word;
+}
+
+.v-align {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    white-space: initial;
+    word-wrap: break-word;
+}
