@@ -1,15 +1,7 @@
-﻿.bigheader {
+﻿.big-header {
     font-size: 24px;
-}
-
-.mukyu {
-    width: 100%;
-    align-content: center;
-    font-family: "Consolas", monospace;
+    font-family: "Source Code Pro", monospace;
     color: rgb(235, 231, 226);
-    font-size: 6vmax;
-    text-align: center;
-    align-items: center;
     white-space: initial;
     word-wrap: break-word;
 }

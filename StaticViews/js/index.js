@@ -2,26 +2,51 @@
 
 onIndexInit();
 
-const starting_phrase = "";
-const words = ["Hi, I'm William Le.", "test.", "piece of garbage."];
-let status = 0;
-let static_box = undefined
-let changing_box = undefined;
-let cursor_box = undefined;
+let header = document.getElementsByTagName("header")[0];
+let text = header.getElementsByTagName("span")[0];
+let cursor = header.getElementsByTagName("span")[1];
 
-let word_counter = 0;
-let char_counter = 0;
-let delay_counter = 0;
+let status = 0;
 
 function onIndexInit() {
-    status = 1;
-    static_box = document.createElement("span")
-    changing_box = document.createElement("span")
-    cursor_box = document.createElement("span")
-    document.getElementsByClassName("mukyu")[0].appendChild(static_box);
-    document.getElementsByClassName("mukyu")[0].appendChild(changing_box);
-    document.getElementsByClassName("mukyu")[0].appendChild(cursor_box);
-
     setInterval(changeText, 100)
     setInterval(blinkCursor, 500)
+}
+
+let blink = false;
+
+let words = ["Hi.", " I'm William Le."]
+let charIndex = 0;
+let wordIndex = 0;
+let delay = 0;
+
+function changeText() {
+    if (wordIndex === words.length)
+        return;
+    
+    if (delay !== 0) {
+        --delay;
+        return;
+    }
+    
+    status = 1;
+    text.innerHTML += words[wordIndex][charIndex++];
+    if (charIndex === words[wordIndex].length) {
+        charIndex = 0;
+        ++wordIndex;
+        delay = 20;
+        status = 0;
+        blinkCursor();
+    }
+}
+
+function blinkCursor() {
+    if (status === 1)
+        blink = true;
+    
+    if (blink)
+        cursor.innerHTML = "|";
+    else
+        cursor.innerHTML = "";
+    blink = !blink;
 }
