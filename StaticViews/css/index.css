@@ -1,36 +1,25 @@
 ﻿.big-header {
-    font-size: 24px;
+    font-size: 48px;
     font-family: "Source Code Pro", monospace;
     color: rgb(235, 231, 226);
     white-space: initial;
     word-wrap: break-word;
+    user-select: none;
+    overflow: no-display;
 }
 
-.stacked {
-    width: 100%;
-    height: 100%;
-    position: absolute;
+.cursor {
+    alignment-baseline: middle;
+    dominant-baseline: middle;
+    white-space: nowrap;
+    overflow: visible;
 }
 
-.patchy {
-    width: 100%;
-    align-content: center;
-    font-family: "Consolas", monospace;
-    color: rgb(235, 231, 226);
-    font-size: 4vmax;
-    text-align: center;
-    align-items: center;
-    white-space: initial;
-    word-wrap: break-word;
+.covered {
+    opacity: 0;
 }
 
-.v-align {
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    white-space: initial;
-    word-wrap: break-word;
+.reveal {
+    opacity: 100%;
+    transition: opacity 1s;
 }

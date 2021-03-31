@@ -46,7 +46,7 @@ nav {
     font-size: 24px;
 }
 
-.nav-container a {
+.nav-link, .nav-container a {
     text-decoration: none;
     color: rgb(255, 255, 255);
 }
@@ -100,4 +100,8 @@ a:link, a:visited {
 }
 a:hover {
     color: #84eeb4;
+}
+
+.hidden {
+    display: none;
 }
