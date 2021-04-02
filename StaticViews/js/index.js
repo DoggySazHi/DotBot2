@@ -39,7 +39,10 @@ function changeText() {
     if (charIndex === words[wordIndex].length) {
         charIndex = 0;
         ++wordIndex;
-        delay = 15;
+        if (wordIndex === words.length)
+            delay = 2;
+        else
+            delay = 15;
         status = 0;
         blinkCursor();
     }
@@ -48,6 +51,13 @@ function changeText() {
 function blinkCursor() {
     let header = document.getElementsByTagName("header")[0];
     let cursor = header.getElementsByTagName("span")[1];
+    
+    if (wordIndex >= words.length) {
+        if (delay !== 0)
+            --delay;
+        else
+            cursor.classList.add("hidden");
+    }
 
     if (status === 1)
         blink = true;
