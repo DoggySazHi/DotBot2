@@ -19,6 +19,9 @@ namespace DotBot2.Controllers
             
             Router.Add("", "StaticViews/views/index.html");
             Router.Add("home", "StaticViews/views/index.html");
+            Router.Add("aboutme", "StaticViews/views/aboutme.html");
+            Router.Add("resources", "StaticViews/views/resources.html");
+            Router.Add("projects", "StaticViews/views/projects.html");
 
             AddFolderToRouter("", "StaticViews/img");
 
