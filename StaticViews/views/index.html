@@ -3,6 +3,7 @@
 
 <!-- CSS libraries -->
 <link rel="stylesheet" href="/css/index.css">
+<link rel="stylesheet" href="/css/lazyload.css">
 
 <div class="container">
     <header class="big-header"><span class="cursor">&nbsp;</span><span></span><span class="cursor">|</span>&#10;</header>
@@ -12,42 +13,61 @@
     <p>I am a high school (and soon to be college) student who simply does things in their free time.</p>
     <hr/>
     <div class="cards">
-        <div class="card-container">
-            <div class="card-div">
-                <div class="card-face card-front">
-                    Front1
-                </div>
-                <div class="card-face card-back">
-                    Bruh.
-                </div>
-            </div>
-        </div>
-        <div class="card-container">
-            <div class="card-div">
-                <div class="card-face card-front">
-                    Front2
-                </div>
-                <div class="card-face card-back">
-                    Bruh.
+        <a href="/projects">
+            <div class="card-container">
+                <div class="card-div">
+                    <div class="card-face card-front">
+                        <img data-src="/img/projects.webp" alt="" class="lazy-load"/>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="card-text">
+                            <h2>Projects</h2>
+                            <p>The things that I actually spent time on.</p>
+                            <p>Or not.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card-container">
-            <div class="card-div">
-                <div class="card-face card-front">
-                    Front3
-                </div>
-                <div class="card-face card-back">
-                    Bruh.
+        </a>
+        <a href="/resources">
+            <div class="card-container">
+                <div class="card-div">
+                    <div class="card-face card-front">
+                        <img data-src="/img/resources.webp" alt="" class="lazy-load"/>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="card-text">
+                            <h2>Random Resources</h2>
+                            <p>Items which aren't explicitly assigned to a project.</p>
+                            <p>It's like a static server!</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </a>
+        <a href="/aboutme">
+            <div class="card-container">
+                <div class="card-div">
+                    <div class="card-face card-front">
+                        <img data-src="/img/aboutme.webp" alt="" class="lazy-load about-me"/>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="card-text">
+                            <h2>About Me</h2>
+                            <p>The guy behind... <i>yes</i>.</p>
+                            <p>🦆</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
     </div>
 </div>
 
 {{"include": "StaticViews/views/template/_gutter.html"}}
 
 <!-- JavaScript libraries -->
+<script type="module" async defer src="/js/lazyload.js"></script>
 <script type="module" async defer src="/js/index.js"></script>
 
 {{"include": "StaticViews/views/template/_footer.html"}}
