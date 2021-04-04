@@ -1,3 +1,4 @@
+using System;
 using DotBot2.Controllers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -20,12 +21,15 @@ namespace DotBot2
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            Console.WriteLine($"Environment: {env.EnvironmentName}");
             if (env.IsDevelopment())
             {
+                Console.WriteLine("Running in developer mode!");
                 app.UseDeveloperExceptionPage();
             }
             else
             {
+                Console.WriteLine("Running in release mode!");
                 app.UseStatusCodePagesWithReExecute("/Error", "?code={0}");
             }
 
