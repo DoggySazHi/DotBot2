@@ -12,7 +12,11 @@ function onInit() {
 function fixNavbar() {
     let height = document.getElementsByTagName("nav")[0].offsetHeight;
     // Sometimes on reload, the browser reports wrong values (cached).
-    document.getElementsByClassName("nav-padding")[0].style.height = Math.min(height, 70) + "px";
+    document.querySelector(".nav-padding").style.height = Math.min(height, 70) + "px";
+    document.querySelector(".nav-mobile-button").addEventListener("click", (e) => {
+        e.preventDefault();
+        toggleNav();
+    })
 }
 
 function fixFooter() {
@@ -22,6 +26,10 @@ function fixFooter() {
 
 function fixCopyright() {
     document.getElementById("copyYear").innerHTML = "" + new Date().getUTCFullYear();
+}
+
+function toggleNav() {
+    document.querySelector(".nav-container").classList.toggle("nav-mobile");
 }
 
 function getUrl(urlLink, params) {

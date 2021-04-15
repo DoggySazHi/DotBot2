@@ -1,0 +1,91 @@
+﻿nav {
+    background-color: rgb(23, 25, 28);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    display: block;
+    position: fixed;
+    z-index: 100000;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.nav-item {
+    float: left;
+    padding: 10px;
+}
+
+.nav-item-right {
+    float: right;
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.nav-logo {
+    height: 32px;
+    width: 32px;
+    object-fit: contain;
+}
+
+.nav-title {
+    font-family: "Source Code Pro", monospace;
+    font-weight: bold;
+    font-size: 24px;
+
+    float: left;
+    padding: 10px 0;
+    margin-right: 10px;
+}
+
+.nav-link, .nav-container a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    height: 100%;
+}
+
+.nav-link:hover, .nav-container a:hover {
+    background-color: rgb(47, 47, 47);
+}
+
+.nav-mobile-button {
+    display: none
+}
+
+@media screen and (max-width: 600px) {
+    .nav-container a:not(:first-child) {
+        display: none;
+    }
+    
+    .nav-mobile-button {
+        all: unset;
+    }
+    
+    .nav-mobile-button img {
+        display: block;
+        float: right;
+        cursor: pointer;
+    }
+
+    .nav-container.nav-mobile {
+        position: relative;
+    }
+
+    .nav-container.nav-mobile .nav-mobile-button {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .nav-container.nav-mobile a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}
