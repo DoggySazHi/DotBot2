@@ -12,6 +12,7 @@
 .nav-container {
     display: flex;
     align-items: center;
+    
     height: 100%;
     margin-left: 10px;
     margin-right: 10px;
@@ -34,6 +35,13 @@
     object-fit: contain;
 }
 
+.nav-ham {
+    height: 24px;
+    width: 24px;
+    margin: 4px;
+    object-fit: contain;
+}
+
 .nav-title {
     font-family: "Source Code Pro", monospace;
     font-weight: bold;
@@ -50,7 +58,7 @@
     height: 100%;
 }
 
-.nav-link:hover, .nav-container a:hover {
+.nav-link:hover, .nav-container a:hover, .nav-ham:hover {
     background-color: rgb(47, 47, 47);
 }
 
@@ -63,6 +71,11 @@
         display: none;
     }
     
+    .nav-container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
     .nav-mobile-button {
         all: unset;
     }
@@ -72,20 +85,15 @@
         float: right;
         cursor: pointer;
     }
-
-    .nav-container.nav-mobile {
-        position: relative;
-    }
-
-    .nav-container.nav-mobile .nav-mobile-button {
-        position: absolute;
-        right: 0;
-        top: 0;
-    }
-
-    .nav-container.nav-mobile a {
-        float: none;
+    
+    .nav-container.nav-mobile a:not(:first-child) {
         display: block;
-        text-align: left;
+        float: none;
+        text-align: center;
+        flex-basis: 100%;
+    }
+    
+    .nav-item-right {
+        flex-basis: 100%;
     }
 }

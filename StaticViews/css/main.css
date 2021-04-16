@@ -63,26 +63,3 @@ a:hover {
 .none {
     display: none;
 }
-
-.col-3 tr td {
-    width: calc(100% / 3);
-}
-
-table {
-    border-collapse: collapse;
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-table tr {
-    border: rgba(0, 0, 0, 0.5);
-}
-
-table tr td {
-    border-top: 1px solid rgba(0, 0, 0, 0.5);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    padding: 10px;
-}
-
-table thead {
-    background-color: rgba(0, 0, 0, 0.2);
-}

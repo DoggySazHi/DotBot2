@@ -1,4 +1,7 @@
 ﻿{{"include": "StaticViews/views/template/_header.html"}}
+
+<link rel="stylesheet" href="/css/table.css">
+
 {{"title": "Projects ~ DotBot"}}
 
 <div class="container">
@@ -8,9 +11,9 @@
     <table class="col-3">
         <thead>
             <tr>
-                <td>Name</td>
-                <td>Description</td>
-                <td>Links</td>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Links</th>
             </tr>
         </thead>
         <tbody>
@@ -20,7 +23,7 @@
                 <td>
                     <div>
                         <a href="https://github.com/DoggySazHi/Modulr">Main Project</a> <br/>
-                        <a href="https://github.com/DoggySazHi/Modulr.Stipulator">Stipulator Core</a>
+                        <a href="https://github.com/DoggySazHi/Modulr.Stipulator">Stipulator Core</a> <br/>
                         <a href="https://modulr.williamle.com">Website (FJUHSD-locked)</a>
                     </div>
                 </td>
@@ -57,6 +60,13 @@
     </table>
     <p>Here are some other things that I've made, though with less effort.</p>
     <table class="col-3">
+        <thead class="none">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Links</th>
+            </tr>
+        </thead>
         <tbody>
             <tr>
                 <td>RCONHelper</td>
@@ -81,5 +91,7 @@
 </div>
 
 {{"include": "StaticViews/views/template/_gutter.html"}}
+
+<script type="module" src="/js/table.js"></script>
 
 {{"include": "StaticViews/views/template/_footer.html"}}

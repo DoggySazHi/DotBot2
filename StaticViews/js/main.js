@@ -3,10 +3,18 @@
 onInit();
 
 function onInit() {
+    bindResponsive();
     fixNavbar();
     fixFooter();
     fixCopyright();
     console.info("Initialized main script!");
+}
+
+function bindResponsive() {
+    document.addEventListener("resize", (e) => {
+        fixNavbar();
+        fixFooter();
+    });
 }
 
 function fixNavbar() {
