@@ -30,11 +30,22 @@ table thead {
         display: none;
     }
 
-    table td {
+    table tr td {
         display: block;
         font-size: .9em;
         text-align: right;
         width: 100%;
+
+        border-top: 0;
+        border-bottom: 0;
+    }
+
+    table tr td:first-child {
+        border-top: 2px solid rgba(0, 0, 0, 0.5);
+    }
+
+    table tr td:last-child {
+        border-bottom: 2px solid rgba(0, 0, 0, 0.5);
     }
 
     table td::before {
@@ -42,10 +53,6 @@ table thead {
         float: left;
         font-weight: bold;
         text-transform: uppercase;
-    }
-
-    table td:last-child {
-        border-bottom: 0;
     }
 
     .col-3 tr td {
