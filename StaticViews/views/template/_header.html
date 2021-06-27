@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/img/dog.svg">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link rel="stylesheet" media="print" onload="this.onload=null; this.removeAttribute('media');" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+    <link rel="stylesheet" media="print" onload="this.onload=null; this.removeAttribute('media');" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    </noscript>
+    
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/nav.css">
     <!-- The other icon stuff -->
@@ -19,7 +28,8 @@
 
     <meta property="og:title" content="DotBot - https://williamle.com" />
     <meta property="og:description" content="Hi, I'm William Le, a software developer." />
-    <meta property="og:image" content="https://williamle.com/img/dog.svg" />
+    <meta name="description" content="Hi, I'm William Le, a software developer.">
+    <meta property="og:image" content="https://williamle.com/staticstuff/dog.png" />
     <meta property="og:site_name" content="DotBot">
     <meta name="theme-color" content="#e8daaa">
 

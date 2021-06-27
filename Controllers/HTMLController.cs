@@ -78,9 +78,7 @@ namespace DotBot2.Controllers
             return !provider.TryGetContentType(file, out var contentType) ? "application/octet-stream" : contentType;
         }
         
-        private enum TemplateCode { Fail, Include, Title,
-            Config
-        }
+        private enum TemplateCode { Fail, Include, Title, Description, Config }
 
         private async Task<string> Templater(string file)
         {
@@ -89,6 +87,7 @@ namespace DotBot2.Controllers
                 return text;
             
             string title = null;
+            string description = null;
             
             var evaluator = new MatchEvaluator(match =>
             {
@@ -100,6 +99,11 @@ namespace DotBot2.Controllers
                     case TemplateCode.Title:
                         title = output;
                         return "";
+                    case TemplateCode.Description:
+                        description = output;
+                        return "";
+                    case TemplateCode.Config:
+                        return output;
                     default:
                         return "";
                 }
@@ -110,9 +114,25 @@ namespace DotBot2.Controllers
                 Regex.InfiniteMatchTimeout);
             var html = new HtmlDocument();
             html.LoadHtml(newPage);
-            var titleNode = html.DocumentNode.SelectSingleNode("//head/title");
-            if (title != null && titleNode != null)
-                titleNode.InnerHtml = title;
+            
+            var titleNode = html.DocumentNode.SelectSingleNode("//title");
+            var titleOGNode = html.DocumentNode.SelectSingleNode("//meta[@property='og:title']");
+            var descriptionNode = html.DocumentNode.SelectSingleNode("//meta[@name='description']");
+            var descrptionOGNode = html.DocumentNode.SelectSingleNode("//meta[@property='og:description']");
+            
+            if (title != null)
+            {
+                if (titleNode != null)
+                    titleNode.InnerHtml = title;
+                titleOGNode?.SetAttributeValue("content", title);
+            }
+            
+            if (description != null)
+            {
+                descriptionNode?.SetAttributeValue("content", description);
+                descrptionOGNode?.SetAttributeValue("content", description);
+            }
+
             return html.DocumentNode.OuterHtml;
         }
 
@@ -122,16 +142,23 @@ namespace DotBot2.Controllers
             try
             {
                 var obj = JObject.Parse(json);
+
                 var file = obj["include"]?.ToString();
                 if (file != null)
-                    //return Get(file).GetAwaiter().GetResult().Content;
                     return (TemplateCode.Include, System.IO.File.ReadAllText(file));
+
                 var title = obj["title"]?.ToString();
                 if (title != null)
                     return (TemplateCode.Title, title);
+
+                var description = obj["description"]?.ToString();
+                if (description != null)
+                    return (TemplateCode.Description, description);
+
                 var config = obj["config"]?.ToString();
                 if (config != null)
                     return (TemplateCode.Config, _config.RawData[config]?.ToString());
+
                 throw new JsonException("Could not understand command!");
             }
             catch (JsonException e)
