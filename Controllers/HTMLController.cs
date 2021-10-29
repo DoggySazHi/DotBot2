@@ -163,7 +163,7 @@ namespace DotBot2.Controllers
             }
             catch (JsonException e)
             {
-                _logger.Log(LogLevel.Error, "Failed to parse JSON!", e);
+                _logger.Log(LogLevel.Error, $"Failed to parse JSON!\n{e}");
                 return (TemplateCode.Fail, "");
             }
         }
