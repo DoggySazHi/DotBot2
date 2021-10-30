@@ -8,7 +8,7 @@ namespace DotBot2.Controllers
     [Route("/{**page}")]
     public class MainController : HTMLController
     {
-        public MainController(ILogger<HTMLController> logger, DotBotConfig config) : base(logger, config)
+        public MainController(ILogger<MainController> logger, DotBotConfig config) : base(logger, config)
         {
             
         }
