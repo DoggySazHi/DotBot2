@@ -1,0 +1,39 @@
+.container {
+    line-height: 1.4;
+}
+
+.about-me-split {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .about-me-split {
+        flex-direction: column;
+    }
+}
+
+.about-me-split-left {
+    flex-basis: 70%;
+}
+
+.about-me-split-right {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    align-items: center;
+}
+
+.about-me-split-right img {
+    width: 100%;
+    height: auto;
+}
+
+h2 {
+    margin-bottom: 0;
+}
+
+.container > ul {
+    margin-top: 8pt;
+}

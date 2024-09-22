@@ -7,7 +7,7 @@ function onInitLazyLoad() {
         lazyLoadAuto();
     else
         lazyLoadManual();
-    
+
     console.log("Enabled lazy-loading of images!");
 }
 
@@ -25,7 +25,7 @@ function lazyLoadAuto() {
         });
     });
 
-    [].forEach.call(document.getElementsByClassName("lazy-load"), o => {
+    [...document.getElementsByClassName("lazy-load")].forEach(o => {
         observer.observe(o);
     });
 }
@@ -38,26 +38,27 @@ function lazyLoadManual() {
 
 function lazyLoadManualCallback() {
     console.log("Using timeouts.");
-    if(lazyLoadTimeout) {
+    if (lazyLoadTimeout) {
         clearTimeout(lazyLoadTimeout);
     }
 
     let lazyLoadImages = document.getElementsByClassName("lazy-load");
 
     lazyLoadTimeout = setTimeout(() => {
-        const scrollTop = window.pageYOffset;
+        // noinspection JSDeprecatedSymbols
+        const scrollTop = window.scrollY || window.pageYOffset;
         lazyLoadImages.forEach(o => {
-            if(o.offsetTop < (window.innerHeight + scrollTop)) {
+            if (o.offsetTop < (window.innerHeight + scrollTop)) {
                 o.src = o.dataset.src;
                 o.classList.remove("lazy-load");
             }
         });
 
-        if(lazyLoadImages.length === 0) {
+        if (lazyLoadImages.length === 0) {
             document.removeEventListener("scroll", lazyLoadManualCallback);
             window.removeEventListener("resize", lazyLoadManualCallback);
             window.removeEventListener("orientationChange", lazyLoadManualCallback);
         }
-        
+
     }, 20);
 }

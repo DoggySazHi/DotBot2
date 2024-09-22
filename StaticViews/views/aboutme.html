@@ -3,34 +3,64 @@
 {{"title": "About Me ~ DotBot"}}
 {{"description": "Because who wants to know about William?"}}
 
+<!-- CSS libraries -->
+<link rel="stylesheet" href="/css/aboutme.css">
+<link rel="stylesheet" href="/css/lazyload.css">
+
 <div class="container">
     <header>About Me</header>
-    <p>I'm William Le, a programmer, I guess. Currently, I am a CSE major at UC Merced, class of 2025. I graduated from Troy High School (class of 2021) through the Troy Tech program.</p>
-    <p>Most projects I do are for fun, learning different programming languages and frameworks.</p>
-    <p>I specialize in C# and Java, however I have experience with web development, machine learning, and normal applications.</p>
-    <br/>
-    <p>I have previously interned with DeltaOne software and as of August 2022, am currently interning with Walpole ITS.</p>
+    <div class="about-me-split">
+        <div class="about-me-split-left">
+            <p>
+                I'm William Le, a programmer, I guess. Online, I go by DoggySazHi. Don't think too hard about it.
+            </p>
+            <p>
+                Currently, I am a software developer with Platform Technology Advisors, working with Sage X3 and Sage 100 ERP systems.
+                I graduated with a bachelors degree in Computer Science and Engineering from the University of California, Merced with the highest honors in 2024.
+                Before that, I was at Troy High School through the Troy Tech program, graduating in 2021.
+            </p>
+            <p>
+                Most projects I do are for fun, learning different programming languages and frameworks.
+                I specialize in C# and Java, especially with full-stack enterprise applications.
+                Doesn't mean that's all I do - I've done machine learning projects in Python, embedded computing in C, desktop applications in C++, and probably more that I can't remember.
+                Heck, I even made a Discord bot in Rust.
+            </p>
+            <p>
+                In my free time, I am also a software developer and systems manager for <a href="https://github.com/Gensokyo-Reimagined">Gensokyo Reimagined</a>, a Touhou Minecraft MMO project.
+                Go check it out, it's pretty cool.
+                If you're a Touhou or Minecraft fan (or both, like myself), you'll probably like it.
+            </p>
+            <p>I have previously interned with DeltaOne software as a machine learning researcher and with Walpole ITS/Platform TA (before I went full-time with them).</p>
+        </div>
+        <div class="about-me-split-right">
+            <img data-src="/img/fumo.webp" alt="William Le holding a Reimu fumo" class="lazy-load about-me-img"/>
+            <p><i>Look at this guh.</i></p>
+        </div>
+    </div>
     <h2>Contact information</h2>
     <ul>
         <li>
             Email: <a href="mailto:theguy@williamle.com">theguy@williamle.com</a>
-            <ul><li>Please contact me through this email for more information (resume and primary email).</li></ul>
+            <ul><li>Please contact me through this email for more information (e.g., resume and primary email).</li></ul>
         </li>
         <li>
             GitHub: <a href="https://github.com/DoggySazHi">DoggySazHi</a>
         </li>
         <li>
-            LinkedIn: <a href="https://www.linkedin.com/in/william-le-a6022620a/">William Le</a>
+            LinkedIn: <a href="https://www.linkedin.com/in/william-huy-le/">William Le</a>
         </li>
         <li>
             Home: Probably under the Hakurei Shrine.
             <ul><li>What, did you think I'd put a real address here?</li></ul>
         </li>
         <li>
-            Discord: DoggySazHi<code>#8280</code>
+            Discord: <code>doggysazhi</code>
         </li>
     </ul>
 </div>
+
+<!-- JavaScript libraries -->
+<script type="module" async defer src="/js/lazyload.js"></script>
 
 {{"include": "StaticViews/views/template/_gutter.html"}}
 
