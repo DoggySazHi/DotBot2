@@ -14,13 +14,11 @@ namespace DotBot2.Controllers
     public abstract class HTMLController : ControllerBase
     {
         private readonly ILogger<HTMLController> _logger;
-        private readonly DotBotConfig _config;
         protected readonly Dictionary<string, string> Router = new();
 
-        protected HTMLController(ILogger<HTMLController> logger, DotBotConfig config)
+        protected HTMLController(ILogger<HTMLController> logger)
         {
             _logger = logger;
-            _config = config;
         }
 
         protected abstract void SetupRouter();
@@ -154,10 +152,6 @@ namespace DotBot2.Controllers
                 var description = obj["description"]?.ToString();
                 if (description != null)
                     return (TemplateCode.Description, description);
-
-                var config = obj["config"]?.ToString();
-                if (config != null)
-                    return (TemplateCode.Config, _config.RawData[config]?.ToString());
 
                 throw new JsonException("Could not understand command!");
             }
